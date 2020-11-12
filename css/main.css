@@ -1,13 +1,13 @@
 .jumbotron {
-    background-color: rgb(88, 88, 88);
+    background-color: grey;
     color: rgb(0, 0, 0);
     margin-top: 5px;
 }
 
 .footer {
     padding: 10px 10px 10px 10px;
-    text-decoration: gray;
-    background-color: rgb(19, 18, 18);
+    text-decoration-color: black;
+    background-color: black;
     margin-bottom: 0px;
     margin-top: 1px;
 }

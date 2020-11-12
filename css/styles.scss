@@ -1,0 +1,43 @@
+$grey:#595959;
+$black:#1f1e1e;
+
+@mixin margenes($top,$bottom){
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+.jumbotron {
+    background-color: $grey;
+    color: $black;
+    @include margenes(5px, 0px);
+}
+
+.footer {
+    padding: 10px 10px 10px 10px;
+    text-decoration-color:$black;
+    background-color:$black;
+    @include margenes(1px, 0px);
+}
+
+.card-hotel{
+    flex: l 200 px;
+    @include margenes(10px, 0px);
+}
+
+.btn-lg{
+    width: 100%;
+    border-radius: 0px ;
+}
+
+.footer-address-icon {
+    padding-right: 10px;
+}
+
+.tab-content {
+    padding-top: 10px;
+}
+
+.btn-outline-success{
+    padding: 0px 0px 1px 0px;
+    @include margenes(0px, 10px);
+}

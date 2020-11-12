@@ -1,0 +1,32 @@
+.jumbotron {
+  background-color: #595959;
+  color: #1f1e1e;
+  margin-top: 5px;
+  margin-bottom: 0px; }
+
+.footer {
+  padding: 10px 10px 10px 10px;
+  text-decoration-color: #1f1e1e;
+  background-color: #1f1e1e;
+  margin-top: 1px;
+  margin-bottom: 0px; }
+
+.card-hotel {
+  flex: l 200 px;
+  margin-top: 10px;
+  margin-bottom: 0px; }
+
+.btn-lg {
+  width: 100%;
+  border-radius: 0px; }
+
+.footer-address-icon {
+  padding-right: 10px; }
+
+.tab-content {
+  padding-top: 10px; }
+
+.btn-outline-success {
+  padding: 0px 0px 1px 0px;
+  margin-top: 0px;
+  margin-bottom: 10px; }

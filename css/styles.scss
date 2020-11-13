@@ -1,7 +1,7 @@
-$grey:#595959;
-$black:#1f1e1e;
+$grey:#474747;
+$black:#fdfafa;
 
-@mixin margenes($top,$bottom){
+@mixin margenes($top, $bottom){
     margin-top: $top;
     margin-bottom: $bottom;
 }
@@ -14,8 +14,8 @@ $black:#1f1e1e;
 
 .footer {
     padding: 10px 10px 10px 10px;
-    text-decoration-color:$black;
-    background-color:$black;
+    text-decoration-color: $black;
+    background-color: $grey;
     @include margenes(1px, 0px);
 }
 

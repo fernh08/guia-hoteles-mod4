@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- build:css dist/index.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
+    <!-- endbuild -->
 
     <title>Guia-Hoteles</title>
   </head>
@@ -113,7 +114,7 @@
     <div>
       <img class="card-img-top" src="images/liniers.jpg" alt="hotel img">
       <h4 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Los 10 primeros en reservar se llevan 10% de descuento en su reserva.">Hotel Liniers</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted">San Telmo</h5>
       <p class="card-text">Bello hotel ubicado en el centro de la ciudad de Buenos Aires.</p>
     </div>
@@ -126,7 +127,7 @@
     <div>
       <img class="card-img-top" src="images/san telmo.jpg" alt="hotel img">
       <h4 class="card-title">Hotel San telmo</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted">Monserrat</h5>
       <p>Antiguo hotel ubicado en el casco histórico de la ciudad.</p>
     </div>
@@ -139,7 +140,7 @@
     <div>
       <img class="card-img-top" src="images/don carlos.jpg" alt="hotel img">
       <h4 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Incluye clases de natacion gratuita en nuestras instalaciones">Hotel Don Carlos</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted">Puerto Madero</h5>
       <p>Cercano a la Costanera, tiene una de las mejores vistas en la ciudad</p>
     </div>
@@ -152,7 +153,7 @@
     <div>
       <img class="card-img-top" src="images/del centro.jpg" alt="hotel img">
       <h4 class="card-title">Hotel Del Centro</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted">San Nicolás</h5>
       <p>Casa colonial refaccionada para recibir huespedes.</p>
     </div>
@@ -165,7 +166,7 @@
     <div>
       <img class="card-img-top" src="images/la bella.jpg" alt="hotel img">
       <h4 class="card-title">Hotel La Bella</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted">Belgrano</h5>
       <p>Hotel Boutique con mucho arte por descubrir.</p>
     </div>
@@ -191,7 +192,7 @@
     <div>
       <img class="card-img-top" src="images/nicanor.jpg" alt="hotel img" >
       <h4 class="card-title">Hotel Nicanor</h4>
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto">Contacto</button>
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn">Contacto</button>
       <h5 class="card-subtitle text-muted" padding-top="20px">San Cristobal</h5>
       <p>Ubicado a metros de Casa Rosada</p>
       </div>
@@ -266,20 +267,42 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <!-- build:js dist/index.js -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script>
-      $(function () {
-        $("[data-toggle='tooltip']").tooltip();
-        $("[data-toggle='popover']").popover();
-        $('.carousel').carousel({
-          interval: 3000
-        })
-      })
+        $(function () {
+          $("[data-toggle='tooltip']").tooltip();
+          $("[data-toggle='popover']").popover();
+          $('.carousel').carousel({
+            interval: 3000
+          });
 
+          $('#contacto').on('show.bs.modal', function (e) {
+            console.log('el modal se esta mostrando');
+
+            $('#contactoBtn').removeClass('btn-outline-success');
+            $('#contactoBtn').addClass('btn-primary');
+            $('#contactoBtn').prop('disabled', true);
+          });
+
+          $('#contacto').on('shown.bs.modal', function (e) {
+            console.log('el modal se mostro');
+          });
+
+          $('#contacto').on('hide.bs.modal', function (e) {
+            console.log('el modal se esta ocultando');
+          });
+
+          $('#contacto').on('hidden.bs.modal', function (e) {
+            console.log('el modal esta oculto');
+            $('#contactoBtn').prop('disabled', false);
+          });
+
+        });
     </script>      
-
+    <!-- endbuild -->
   </body>
 </html>
